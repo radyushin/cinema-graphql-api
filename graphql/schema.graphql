@@ -1,0 +1,30 @@
+type Query {
+    "Paginate though all movies"
+    movies(genre: ID search: String): [Movie!]! @paginate(scopes: ["filterByGenre", "searchByTitle"])
+    "Get one exact movie"
+    movie(id: ID! @eq): Movie @find
+    "Get all movie genres"
+    genres: [Genre!]! @all
+    "Get all sessions for a date"
+    sessions(date: Date! @where(clause: "whereDate")): [Session!]! @all
+    "Get all auditoriums that exist in the cinema"
+    auditoriums: [Auditorium!]! @all
+    "Get one exact auditorium"
+    auditorium(id: ID! @eq): Auditorium @find
+    "Get all orders for a specific session"
+    orders(session: ID! @eq(key: "session_id")): [Order!]! @all
+}
+
+type Mutation {
+    "Order a specific seat for a session"
+    reserve(session: ID! seat: ID!): Order!
+}
+
+"Date and time in format '2019-02-22 10:00:00'"
+scalar DateTime @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTime")
+"Date in format '2019-02-22'"
+scalar Date @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Date")
+"Typical URL string"
+scalar URL @scalar(class: "URL")
+
+#import types/*.graphql

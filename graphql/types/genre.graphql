@@ -1,0 +1,5 @@
+"The genre of a movie"
+type Genre {
+    id: ID!
+    name: String!
+}

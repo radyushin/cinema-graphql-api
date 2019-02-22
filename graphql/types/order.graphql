@@ -1,0 +1,7 @@
+"The entity represents user's order for a session and a seat"
+type Order {
+    id: ID!
+    session: Session!
+    seat: Seat!
+    created_at: DateTime!
+}

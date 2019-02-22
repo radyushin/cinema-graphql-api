@@ -1,0 +1,12 @@
+"The movie instance"
+type Movie {
+    id: ID!
+    title: String!
+    description: String!
+    poster: URL!
+    rating: Float!
+    country: String!
+    genres: [Genre!]
+    created_at: DateTime!
+    updated_at: DateTime
+}

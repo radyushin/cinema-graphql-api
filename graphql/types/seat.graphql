@@ -1,0 +1,6 @@
+"One of the seats in Autitorium"
+type Seat {
+    id: ID!
+    row: Int!
+    auditorium: Auditorium!
+}

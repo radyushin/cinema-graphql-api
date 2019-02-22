@@ -1,0 +1,8 @@
+"One of the movie sessions"
+type Session {
+    id: ID!
+    date: DateTime!
+    price: Int!
+    movie: Movie!
+    auditorium: Auditorium!
+}

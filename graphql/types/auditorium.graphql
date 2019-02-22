@@ -1,0 +1,6 @@
+"The hall where movie sessions have a place"
+type Auditorium {
+    id: ID!
+    name: String!
+    seats: [Seat!]!
+}
